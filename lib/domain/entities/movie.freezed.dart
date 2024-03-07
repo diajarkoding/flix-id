@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Movie {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
 
@@ -29,7 +29,7 @@ abstract class $MovieCopyWith<$Res> {
   factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
       _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
-  $Res call({String id, String title, String? posterPath});
+  $Res call({int id, String title, String? posterPath});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -73,7 +73,7 @@ abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
       __$$MovieImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String? posterPath});
+  $Res call({int id, String title, String? posterPath});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$$MovieImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -111,10 +111,10 @@ class __$$MovieImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MovieImpl implements _Movie {
-  _$MovieImpl({required this.id, required this.title, this.posterPath});
+  const _$MovieImpl({required this.id, required this.title, this.posterPath});
 
   @override
-  final String id;
+  final int id;
   @override
   final String title;
   @override
@@ -147,13 +147,13 @@ class _$MovieImpl implements _Movie {
 }
 
 abstract class _Movie implements Movie {
-  factory _Movie(
-      {required final String id,
+  const factory _Movie(
+      {required final int id,
       required final String title,
       final String? posterPath}) = _$MovieImpl;
 
   @override
-  String get id;
+  int get id;
   @override
   String get title;
   @override

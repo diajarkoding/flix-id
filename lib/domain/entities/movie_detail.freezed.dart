@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MovieDetail {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $MovieDetailCopyWith<$Res> {
       _$MovieDetailCopyWithImpl<$Res, MovieDetail>;
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String title,
       String? posterPath,
       String overview,
@@ -73,7 +73,7 @@ class _$MovieDetailCopyWithImpl<$Res, $Val extends MovieDetail>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$MovieDetailImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String title,
       String? posterPath,
       String overview,
@@ -149,7 +149,7 @@ class __$$MovieDetailImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -185,7 +185,7 @@ class __$$MovieDetailImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MovieDetailImpl implements _MovieDetail {
-  _$MovieDetailImpl(
+  const _$MovieDetailImpl(
       {required this.id,
       required this.title,
       this.posterPath,
@@ -197,7 +197,7 @@ class _$MovieDetailImpl implements _MovieDetail {
       : _genres = genres;
 
   @override
-  final String id;
+  final int id;
   @override
   final String title;
   @override
@@ -262,8 +262,8 @@ class _$MovieDetailImpl implements _MovieDetail {
 }
 
 abstract class _MovieDetail implements MovieDetail {
-  factory _MovieDetail(
-      {required final String id,
+  const factory _MovieDetail(
+      {required final int id,
       required final String title,
       final String? posterPath,
       required final String overview,
@@ -273,7 +273,7 @@ abstract class _MovieDetail implements MovieDetail {
       required final List<String> genres}) = _$MovieDetailImpl;
 
   @override
-  String get id;
+  int get id;
   @override
   String get title;
   @override

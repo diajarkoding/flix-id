@@ -100,7 +100,7 @@ class __$$ActorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ActorImpl implements _Actor {
-  _$ActorImpl({required this.name, this.profilePath});
+  const _$ActorImpl({required this.name, this.profilePath});
 
   @override
   final String name;
@@ -133,8 +133,8 @@ class _$ActorImpl implements _Actor {
 }
 
 abstract class _Actor implements Actor {
-  factory _Actor({required final String name, final String? profilePath}) =
-      _$ActorImpl;
+  const factory _Actor(
+      {required final String name, final String? profilePath}) = _$ActorImpl;
 
   @override
   String get name;

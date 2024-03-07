@@ -5,7 +5,7 @@ part 'transaction.g.dart';
 
 @freezed
 class Transaction with _$Transaction {
-  factory Transaction({
+  const factory Transaction({
     String? id,
     required String uid,
     int? transactionTime,

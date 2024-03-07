@@ -242,7 +242,7 @@ class __$$TransactionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TransactionImpl implements _Transaction {
-  _$TransactionImpl(
+  const _$TransactionImpl(
       {this.id,
       required this.uid,
       this.transactionTime,
@@ -355,7 +355,7 @@ class _$TransactionImpl implements _Transaction {
 }
 
 abstract class _Transaction implements Transaction {
-  factory _Transaction(
+  const factory _Transaction(
       {final String? id,
       required final String uid,
       final int? transactionTime,

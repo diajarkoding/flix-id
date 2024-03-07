@@ -1,6 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flix_id/data/repositories/authentication.dart';
 import 'package:flix_id/domain/entities/result.dart';
+
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
 class FirebaseAuthentication implements Authentication {
   final firebase_auth.FirebaseAuth _firebaseAuth;
@@ -9,7 +10,7 @@ class FirebaseAuthentication implements Authentication {
       : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   @override
-  String? getLoggedInUserId() => _firebaseAuth.currentUser!.uid;
+  String? getLoggedInUserId() => _firebaseAuth.currentUser?.uid;
 
   @override
   Future<Result<String>> login(
@@ -17,7 +18,7 @@ class FirebaseAuthentication implements Authentication {
     try {
       var userCredential = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
-      return Result.succes(userCredential.user!.uid);
+      return Result.success(userCredential.user!.uid);
     } on firebase_auth.FirebaseAuthException catch (e) {
       return Result.failed(e.message!);
     }
@@ -27,7 +28,7 @@ class FirebaseAuthentication implements Authentication {
   Future<Result<void>> logout() async {
     await _firebaseAuth.signOut();
     if (_firebaseAuth.currentUser == null) {
-      return const Result.succes(null);
+      return const Result.success(null);
     } else {
       return const Result.failed('Failed to sign out');
     }
@@ -39,7 +40,7 @@ class FirebaseAuthentication implements Authentication {
     try {
       var userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-      return Result.succes(userCredential.user!.uid);
+      return Result.success(userCredential.user!.uid);
     } on firebase_auth.FirebaseAuthException catch (e) {
       return Result.failed('${e.message}');
     }

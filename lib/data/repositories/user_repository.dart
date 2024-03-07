@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:flix_id/domain/entities/result.dart';
-import 'package:flix_id/domain/entities/user.dart';
+import '../../domain/entities/result.dart';
+import '../../domain/entities/user.dart';
 
 abstract interface class UserRepository {
   Future<Result<User>> createUser({
@@ -17,6 +17,6 @@ abstract interface class UserRepository {
   Future<Result<int>> getUserBalance({required String uid});
   Future<Result<User>> updateUserBalance(
       {required String uid, required int balance});
-  Future<Result<User>> updateProfilePicture(
+  Future<Result<User>> uploadProfilePicture(
       {required User user, required File imageFile});
 }
